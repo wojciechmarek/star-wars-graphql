@@ -3,7 +3,7 @@ import { Film } from 'src/models';
 
 @Injectable()
 export class FilmApiService {
-  apiBaseUrl = 'https://swapi.dev/api';
+  apiBaseUrl = process.env.SWAPI_BASE_URL;
 
   async getFilmById(id: number): Promise<Film> {
     const response = await fetch(`${this.apiBaseUrl}/films/${id}`);

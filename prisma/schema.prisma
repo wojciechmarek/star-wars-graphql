@@ -9,3 +9,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Cache {
+  id         Int      @id @default(autoincrement())
+  type       String
+  parameter  Int
+  is_expired Boolean
+  expires_at DateTime
+  value      String
+}

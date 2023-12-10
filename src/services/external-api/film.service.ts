@@ -6,6 +6,8 @@ export class FilmApiService {
   apiBaseUrl = process.env.SWAPI_BASE_URL;
 
   async getFilmById(id: number): Promise<Film> {
+    console.log('.......getFilmById.........');
+
     const response = await fetch(`${this.apiBaseUrl}/films/${id}`);
     const result = await response.json();
 

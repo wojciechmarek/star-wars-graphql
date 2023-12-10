@@ -20,8 +20,7 @@ export class FilmsResolver {
   async films(
     @Args('page', { type: () => Int }) page: number,
   ): Promise<Film[]> {
-    this.queryBus.execute(new GetPaginatedFilmsQuery(page));
-    return new Array<Film>();
+    return this.queryBus.execute(new GetPaginatedFilmsQuery(page));
   }
 
   @Query(() => String)

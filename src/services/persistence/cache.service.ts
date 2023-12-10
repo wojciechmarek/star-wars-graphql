@@ -10,11 +10,6 @@ export class CacheService {
   async manageCache<T>(type: string, newData: () => Promise<T>): Promise<T> {
     const cache = await this.getCache(type);
 
-    console.log(
-      'cache istnieje  .............:',
-      cache && this.isCacheValid(cache),
-    );
-
     if (cache && this.isCacheValid(cache)) {
       return JSON.parse(cache.value) as T;
     } else if (cache) {
@@ -50,7 +45,7 @@ export class CacheService {
         },
       });
     } catch (error) {
-      console.log('Error occurred:' + error);
+      console.log('Prisma error occurred:' + error);
     }
   }
 
@@ -65,7 +60,7 @@ export class CacheService {
         },
       });
     } catch (error) {
-      console.log('Error occurred:' + error);
+      console.log('Prisma error occurred:' + error);
     }
   }
 

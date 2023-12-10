@@ -1,4 +1,10 @@
 import { Module } from '@nestjs/common';
+import { FilmApiService } from './external-api';
 
-@Module({})
+const ExternalApiServices = [FilmApiService];
+
+@Module({
+  providers: [...ExternalApiServices],
+  exports: [...ExternalApiServices],
+})
 export class ServicesModule {}

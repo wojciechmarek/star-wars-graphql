@@ -25,7 +25,6 @@ export class FilmsResolver {
 
   @Query(() => String)
   async uniqueWords(): Promise<string> {
-    this.queryBus.execute(new GetUniqueWordsQuery());
-    return 'Hello World!';
+    return this.queryBus.execute(new GetUniqueWordsQuery());
   }
 }

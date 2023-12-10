@@ -1,23 +1,23 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class Film {
-  @Field(() => String)
+export class Species {
+  @Field()
   title: string;
 
-  @Field(() => String)
+  @Field()
   episode_id: string;
 
-  @Field(() => String)
+  @Field()
   opening_crawl: string;
 
-  @Field(() => String)
+  @Field()
   director: string;
 
-  @Field(() => String)
+  @Field()
   producer: string;
 
-  @Field(() => String)
+  @Field()
   release_date: string;
 
   @Field(() => [String])
@@ -35,12 +35,12 @@ export class Film {
   @Field(() => [String])
   species: string[];
 
-  @Field(() => String)
+  @Field()
   created: string;
 
-  @Field(() => String)
+  @Field()
   edited: string;
 
-  @Field(() => String)
+  @Field()
   url: string;
 }

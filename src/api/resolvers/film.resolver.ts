@@ -1,11 +1,11 @@
 import { Args, Int, Query, Resolver } from '@nestjs/graphql';
-import { Film } from '../models';
 import { QueryBus } from '@nestjs/cqrs';
 import {
   GetFilmByIdQuery,
   GetPaginatedFilmsQuery,
   GetUniqueWordsQuery,
 } from 'src/domain/queries';
+import { Film } from '../models/film';
 
 @Resolver(() => Film)
 export class FilmsResolver {

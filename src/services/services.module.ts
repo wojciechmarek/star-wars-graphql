@@ -1,8 +1,22 @@
 import { Module } from '@nestjs/common';
-import { FilmApiService, PersonApiService } from './external-api';
+import {
+  FilmApiService,
+  PersonApiService,
+  PlanetApiService,
+  SpeciesApiService,
+  StarshipApiService,
+  VehicleApiService,
+} from './external-api';
 import { CacheService, PrismaService } from './persistence';
 
-const ExternalApiServices = [FilmApiService, PersonApiService];
+const ExternalApiServices = [
+  FilmApiService,
+  PersonApiService,
+  PlanetApiService,
+  SpeciesApiService,
+  StarshipApiService,
+  VehicleApiService,
+];
 const PersistenceServices = [CacheService, PrismaService];
 
 @Module({

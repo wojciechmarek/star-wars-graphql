@@ -5,6 +5,14 @@ import {
   GetFilmByIdQueryHandler,
   GetUniqueWordsQueryHandler,
   GetMostOftenNameQueryHandler,
+  GetPlanetByIdQueryHandler,
+  GetPaginatedPlanetsQueryHandler,
+  GetSpeciesByIdQueryHandler,
+  GetPaginatedSpeciesQueryHandler,
+  GetStarshipByIdQueryHandler,
+  GetPaginatedStarshipQueryHandler,
+  GetVehicleByIdQueryHandler,
+  GetPaginatedVehiclesQueryHandler,
 } from './queries';
 import { ServicesModule } from 'src/services/services.module';
 
@@ -13,6 +21,14 @@ export const QueryHandlers = [
   GetFilmByIdQueryHandler,
   GetUniqueWordsQueryHandler,
   GetMostOftenNameQueryHandler,
+  GetPlanetByIdQueryHandler,
+  GetPaginatedPlanetsQueryHandler,
+  GetSpeciesByIdQueryHandler,
+  GetPaginatedSpeciesQueryHandler,
+  GetStarshipByIdQueryHandler,
+  GetPaginatedStarshipQueryHandler,
+  GetVehicleByIdQueryHandler,
+  GetPaginatedVehiclesQueryHandler,
 ];
 
 @Module({

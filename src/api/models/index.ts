@@ -1,2 +1,5 @@
-export * from './film.model';
-export * from './person.model';
+export * from './film';
+export * from './vehicle';
+export * from './starship';
+export * from './planet';
+export * from './species';

@@ -1,3 +1,3 @@
 export class GetFilmByIdQuery {
-  constructor(public readonly id: string) {}
+  constructor(public readonly id: number) {}
 }

@@ -5,6 +5,7 @@ import {
   GetFilmByIdQueryHandler,
   GetUniqueWordsQueryHandler,
 } from './queries';
+import { ServicesModule } from 'src/services/services.module';
 
 export const QueryHandlers = [
   GetPaginatedFilmsQueryHandler,
@@ -13,7 +14,7 @@ export const QueryHandlers = [
 ];
 
 @Module({
-  imports: [CqrsModule],
+  imports: [CqrsModule, ServicesModule],
   providers: [...QueryHandlers],
   exports: [...QueryHandlers],
 })

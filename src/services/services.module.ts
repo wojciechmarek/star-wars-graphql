@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { FilmApiService } from './external-api';
+import { FilmApiService, PersonApiService } from './external-api';
 import { CacheService, PrismaService } from './persistence';
 
-const ExternalApiServices = [FilmApiService];
+const ExternalApiServices = [FilmApiService, PersonApiService];
 const PersistenceServices = [CacheService, PrismaService];
 
 @Module({

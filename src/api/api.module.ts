@@ -1,11 +1,11 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { FilmsResolver } from './resolvers';
+import { FilmsResolver, PersonResolver } from './resolvers';
 import { DomainModule } from 'src/domain/domain.module';
 import { CqrsModule } from '@nestjs/cqrs';
 
-const Resolvers = [FilmsResolver];
+const Resolvers = [FilmsResolver, PersonResolver];
 
 @Module({
   imports: [

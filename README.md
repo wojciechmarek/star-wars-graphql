@@ -1,73 +1,76 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Star Wars GraphQL
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This simple Star Wars API GraphQL wrapper with cache.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Used technologies
 
-## Description
+- 🎁 **Repository:** standard Git repository
+- 🌈 **Framework:** nest.js
+- 🛠️ **Tools:** prisma orm, graphql
+- 💎 **Others:** docker and docker-compose, cqrs, postgresql
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## GraphQL API
 
-## Installation
+This application uses GraphQL. You can find the GraphQL playground at `http://localhost:3000/graphql`.
+Currently, the following queries are available:
 
-```bash
-$ npm install
+### Basic queries
+
+- `film(id: number)` - returns a film by id
+- `allFilms(page?: number)` - returns all films, with optional pagination
+- `planet(id: number)` - returns a planet by id
+- `allPlanets(page?: number)` - returns all planets, with optional pagination
+- `species(id: number)` - returns a species by id
+- `allSpecies(page?: number)` - returns all species, with optional pagination
+- `starship(id: number)` - returns a starship by id
+- `allStarship(page?: number)` - returns all starship, with optional pagination
+- `vehicle(id: number)` - returns a vehicle by id
+- `allVehicles(page?: number)` - returns all vehicles, with optional pagination
+
+### Additional queries
+
+- `uniqueWords` - returns table of pairs (word-frequency) separated by `\n\r` characters, pairs based on the opening crawl of all films,
+- `mostOftenName` - returns the most common name in the opening crawl of all films.
+
+### Usage example
+
+```graphql
+query {
+  film(id: 1) {
+    title
+    // rest fields
+  }
+}
 ```
 
-## Running the app
+## Tests
+
+To run tests type and run: `npm run test` in the root directory. The app contains external API tests, 22 tests in total.
+
+Result:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+Test Suites: 6 passed, 6 total
+Tests:       22 passed, 22 total
+Snapshots:   0 total
+Time:        39.145 s, estimated 44 s
 ```
 
-## Test
+## How to run in development mode
 
-```bash
-# unit tests
-$ npm run test
+1. Install [Docker](https://docs.docker.com/get-docker/).
+2. Install [Node.js](https://nodejs.org/en/download/).
+3. Clone the repository.
+4. Get and run database: `docker run --name swapi-gql-db -p 5432:5432 -d -e -e POSTGRES_PASSWORD="passw123" postgres:13.1-alpine`
+5. Type and run: `npm install` in the root directory.
+6. Generate the database schema: `npx prisma db push`
+7. Type and run: `npm run start` in the root directory.
+8. Open `http://localhost:3000/graphql` in your browser to see the GraphQL playground.
 
-# e2e tests
-$ npm run test:e2e
+## How to run in production mode
 
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+1. Install [Docker](https://docs.docker.com/get-docker/).
+2. Clone the repository.
+3. Type and run: `docker-compose build -d` in the root directory.
+4. Type and run: `docker-compose up -d` in the root directory.
+5. Open `http://localhost:3000/graphql` in your browser to see the GraphQL playground.

@@ -43,6 +43,19 @@ query {
 }
 ```
 
+## Tests
+
+To run tests type and run: `npm run test` in the root directory. The app contains external API tests, 22 tests in total.
+
+Result:
+
+```bash
+Test Suites: 6 passed, 6 total
+Tests:       22 passed, 22 total
+Snapshots:   0 total
+Time:        39.145 s, estimated 44 s
+```
+
 ## How to run in development mode
 
 1. Install [Docker](https://docs.docker.com/get-docker/).

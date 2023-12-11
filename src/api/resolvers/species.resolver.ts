@@ -17,7 +17,7 @@ export class SpeciesResolver {
 
   @Query(() => [Species])
   async allSpecies(
-    @Args('page', { type: () => Int }) page: number,
+    @Args('page', { type: () => Int, defaultValue: 1 }) page: number,
   ): Promise<Species[]> {
     return this.queryBus.execute(new GetPaginatedSpeciesQuery(page));
   }

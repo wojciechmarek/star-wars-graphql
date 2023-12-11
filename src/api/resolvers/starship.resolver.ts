@@ -18,8 +18,8 @@ export class StarshipResolver {
   }
 
   @Query(() => [Starship])
-  async starships(
-    @Args('page', { type: () => Int }) page: number,
+  async allStarship(
+    @Args('page', { type: () => Int, defaultValue: 1 }) page: number,
   ): Promise<Starship[]> {
     return this.queryBus.execute(new GetPaginatedStarshipQuery(page));
   }

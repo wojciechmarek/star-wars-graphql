@@ -16,8 +16,8 @@ export class PlanetResolver {
   }
 
   @Query(() => [Planet])
-  async planets(
-    @Args('page', { type: () => Int }) page: number,
+  async allPlanets(
+    @Args('page', { type: () => Int, defaultValue: 1 }) page: number,
   ): Promise<Planet[]> {
     return this.queryBus.execute(new GetPaginatedPlanetsQuery(page));
   }

@@ -15,7 +15,7 @@ export class GetStarshipByIdQueryHandler
   async execute(query: GetStarshipByIdQuery): Promise<Starship> {
     const { id } = query;
     return this.cacheService.manageCache<Starship>(
-      `GetVehicleByIdQuery-${id}`,
+      `GetStarshipByIdQuery-${id}`,
       () => this.starshipApiService.getStarshipById(id),
     );
   }

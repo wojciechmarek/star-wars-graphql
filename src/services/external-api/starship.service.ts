@@ -6,7 +6,7 @@ export class StarshipApiService {
   apiBaseUrl = process.env.SWAPI_BASE_URL;
 
   async getStarshipById(id: number): Promise<Starship> {
-    const response = await fetch(`${this.apiBaseUrl}/vehicles/${id}`);
+    const response = await fetch(`${this.apiBaseUrl}/starships/${id}`);
     const result = await response.json();
 
     if (result.detail) {
@@ -17,7 +17,7 @@ export class StarshipApiService {
   }
 
   async getPaginatedStarship(page: number): Promise<Starship[]> {
-    const response = await fetch(`${this.apiBaseUrl}/vehicles/?page=${page}`);
+    const response = await fetch(`${this.apiBaseUrl}/starships/?page=${page}`);
     const result = await response.json();
 
     if (result.detail) {

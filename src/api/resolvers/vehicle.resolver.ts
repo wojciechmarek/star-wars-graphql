@@ -16,8 +16,8 @@ export class VehicleResolver {
   }
 
   @Query(() => [Vehicle])
-  async vehicles(
-    @Args('page', { type: () => Int }) page: number,
+  async allVehicles(
+    @Args('page', { type: () => Int, defaultValue: 1 }) page: number,
   ): Promise<Vehicle[]> {
     return this.queryBus.execute(new GetPaginatedVehiclesQuery(page));
   }

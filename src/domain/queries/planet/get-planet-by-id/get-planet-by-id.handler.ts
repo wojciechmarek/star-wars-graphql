@@ -16,7 +16,7 @@ export class GetPlanetByIdQueryHandler
     const { id } = query;
 
     return this.cacheService.manageCache<Planet>(
-      `GetPaginatedPlanetsQuery-${id}`,
+      `GetPlanetByIdQuery-${id}`,
       () => this.planetApiService.getPlanetById(id),
     );
   }

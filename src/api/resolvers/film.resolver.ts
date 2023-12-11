@@ -17,8 +17,8 @@ export class FilmsResolver {
   }
 
   @Query(() => [Film])
-  async films(
-    @Args('page', { type: () => Int }) page: number,
+  async allFilms(
+    @Args('page', { type: () => Int, defaultValue: 1 }) page: number,
   ): Promise<Film[]> {
     return this.queryBus.execute(new GetPaginatedFilmsQuery(page));
   }

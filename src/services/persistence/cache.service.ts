@@ -25,7 +25,7 @@ export class CacheService {
     try {
       return this.prisma.cache.create({
         data: {
-          expires_at: moment().add(1, 'hour').toDate(),
+          expires_at: moment().add(1, 'day').toDate(),
           is_expired: false,
           type,
           value: JSON.stringify(value),

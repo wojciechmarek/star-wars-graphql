@@ -3,37 +3,49 @@ import { Field, ObjectType } from '@nestjs/graphql';
 @ObjectType()
 export class Starship {
   @Field()
-  title: string;
+  name: string;
 
   @Field()
-  episode_id: string;
+  model: string;
 
   @Field()
-  opening_crawl: string;
+  manufacturer: string;
 
   @Field()
-  director: string;
+  cost_in_credits: string;
 
   @Field()
-  producer: string;
+  length: string;
 
   @Field()
-  release_date: string;
+  max_atmosphering_speed: string;
+
+  @Field()
+  crew: string;
+
+  @Field()
+  passengers: string;
+
+  @Field()
+  cargo_capacity: string;
+
+  @Field()
+  consumables: string;
+
+  @Field()
+  hyperdrive_rating: string;
+
+  @Field()
+  MGLT: string;
+
+  @Field()
+  starship_class: string;
 
   @Field(() => [String])
-  characters: string[];
+  pilots: string[];
 
   @Field(() => [String])
-  planets: string[];
-
-  @Field(() => [String])
-  starships: string[];
-
-  @Field(() => [String])
-  vehicles: string[];
-
-  @Field(() => [String])
-  species: string[];
+  films: string[];
 
   @Field()
   created: string;

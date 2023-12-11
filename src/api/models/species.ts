@@ -3,37 +3,40 @@ import { Field, ObjectType } from '@nestjs/graphql';
 @ObjectType()
 export class Species {
   @Field()
-  title: string;
+  name: string;
 
   @Field()
-  episode_id: string;
+  classification: string;
 
   @Field()
-  opening_crawl: string;
+  designation: string;
 
   @Field()
-  director: string;
+  average_height: string;
 
   @Field()
-  producer: string;
+  skin_colors: string;
 
   @Field()
-  release_date: string;
+  hair_colors: string;
+
+  @Field()
+  eye_colors: string;
+
+  @Field()
+  average_lifespan: string;
+
+  @Field()
+  homeworld: string;
+
+  @Field()
+  language: string;
 
   @Field(() => [String])
-  characters: string[];
+  people: string[];
 
   @Field(() => [String])
-  planets: string[];
-
-  @Field(() => [String])
-  starships: string[];
-
-  @Field(() => [String])
-  vehicles: string[];
-
-  @Field(() => [String])
-  species: string[];
+  films: string[];
 
   @Field()
   created: string;

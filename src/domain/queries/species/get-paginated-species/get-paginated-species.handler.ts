@@ -16,7 +16,7 @@ export class GetPaginatedSpeciesQueryHandler
     const { page } = query;
 
     return this.cacheService.manageCache<Species[]>(
-      `GetPaginatedVehiclesQuery-${page}`,
+      `GetPaginatedSpeciesQuery-${page}`,
       () => this.speciesApiService.getPaginatedSpecies(page),
     );
   }

@@ -5,8 +5,8 @@ This simple Star Wars API GraphQL wrapper with cache.
 ## Purpose
 This application was created as a "home recruitment task" to the Polish company based in Cracow - [Dev and Deliver](https://www.gowork.pl/opinie_czytaj,21584258). 
 
-- Feedback from the company: `we don't want you!`
-- My feedback after recruitment process: `don't waste your time to the recruitment process!`
+- Feedback from the company: `We continue the process with other candidates!`
+- My feedback after recruitment process: `Do not waste your time to the recruitment process, after final task submit I wait two weeks to any response (they clone the repo in the same day I submitted the link), finally I got plain, soulless email with list of things I did wrong, any call from recruiter side. In summary: process experience = F`
 
 ## Used technologies
 
